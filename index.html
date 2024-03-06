@@ -10,15 +10,16 @@
   <button onclick="fetchTodos()">Fetch To-dos</button>
   <button onclick="logTodos()">Log To-dos</button>
   <button onclick="populateTodos()">Populate To-dos</button>
-  <input type="number" id="userNum" name="userNum" min="1" max="10"></input>
-  <button onclick="changeUser()">changeUser</button>
+  <label for="userNum">User Selection:</label>
+  <input type="number" id="userNum" name="userNum" min="1" max="10" onchange="changeUser()"></input>
+  <!-- <button onclick="changeUser()">changeUser</button> -->
   <button onclick="populateTodosFiltered()">Populate filtered list.</button>
   <button onclick="removeTodos()">Remove to-do list.</button>
   <button onclick="showComplete()">Show completed items.</button>
   <div id="double-lists">
     <p>To-do:</p>
     <ol id="todo-list">
-      <!-- LIs will go here -->
+
     </ol>
     <p>Completed:</p>
     <ol id="todo-list-completed">

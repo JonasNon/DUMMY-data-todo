@@ -51,7 +51,7 @@
     filtered = arrayOfTodos.filter((todo) => {
       return todo.userId == currentUser
     })
-    console.log(filtered)
+    console.log('user items: ' , filtered)
 
     for (i = 0; i < filtered.length; i++) {
       let newLi = document.createElement('li')
@@ -75,7 +75,11 @@ const removeTodos = () => {
 }
 
 const showComplete = () => {
+  // console.log(todoList.innerHTML)
+
+  populateTodosFiltered()
   removeTodos()
+
   let completed = filtered.filter((todo) => {
     return todo.completed == true
   })
@@ -86,14 +90,12 @@ const showComplete = () => {
     let newLi = document.createElement('li')
     let newText = document.createTextNode(unDone[i].title)
     newLi.appendChild(newText)
-    // newLi = arrayOfTodos[i]
     todoList.append(newLi)
   }
   for (i = 0; i < completed.length; i++) {
     let newLi = document.createElement('li')
     let newText = document.createTextNode(completed[i].title)
     newLi.appendChild(newText)
-    // newLi = arrayOfTodos[i]
     completeList.append(newLi)
   }
 }
